@@ -12,7 +12,7 @@ namespace FacultyManager.Data.Models
         public string Name { get; set; }
         public int DepartmentCode { get; set; }
 
-        public ICollection<Student> Students { get; set; }
-        public ICollection<Teacher> Teachers { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }

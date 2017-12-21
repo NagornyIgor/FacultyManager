@@ -11,8 +11,9 @@ namespace FacultyManager.Data
     public class FacultyDbContext : DbContext
     {
         public FacultyDbContext() 
-            : base ("FacultyDbContext")
+            : base ("FacultyManagerDb")
         {
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FacultyDbContext, Configuration>("FacultyDbContext"));
             Database.SetInitializer(new FacultyDbInitializer());
         }
 
@@ -21,5 +22,11 @@ namespace FacultyManager.Data
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Teacher> Teachers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

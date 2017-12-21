@@ -8,6 +8,8 @@ namespace FacultyManager.Api.ResourceModels
 {
     public class DepartmentResourceModel
     {
-        public IList<DepartmentDto> Departments { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int DepartmentCode { get; set; }
     }
 }

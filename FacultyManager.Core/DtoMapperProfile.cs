@@ -13,7 +13,7 @@ namespace FacultyManager.Core
     {
         public DtoMapperProfile()
         {
-            CreateMap<Department, IList<DepartmentDto>>().PreserveReferences().ReverseMap();
+            CreateMap<Department, DepartmentDto>().PreserveReferences().ReverseMap();
 
             CreateMap<Student, StudentDto>().PreserveReferences().ReverseMap();
 

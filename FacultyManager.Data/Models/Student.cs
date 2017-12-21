@@ -13,7 +13,10 @@ namespace FacultyManager.Data.Models
         public string Surname { get; set; }
         public int Age { get; set; }
 
-        public Department Department { get; set; }
-        public ICollection<Teacher> Teachers { get; set; }
+        public virtual Department Department { get; set; }
+        public int DepartmentId { get; set; }
+
+        public virtual Teacher Teacher { get; set; }
+        public int TeacherId { get; set; }
     }
 }

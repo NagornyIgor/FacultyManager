@@ -12,8 +12,9 @@ namespace FacultyManager.Data.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Rank { get; set; }
+        public string Сourse { get; set; }
 
-        public Department Department { get; set; }
-        ICollection<Student> Students { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

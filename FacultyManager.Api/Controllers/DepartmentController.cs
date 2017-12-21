@@ -22,31 +22,11 @@ namespace FacultyManager.Api.Controllers
         // GET api/department
         public IHttpActionResult Get()
         {
-            //var resource = Mapper.Map<DepartmentResourceModel>(departmentService.GetAll());
-            var resource = departmentService.GetAll();
+            var departments = departmentService.GetAll();
+
+            var resource = Mapper.Map<IList<DepartmentResourceModel>>(departments);
 
             return Json(resource);
-        }
-
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
         }
     }
 }

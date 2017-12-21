@@ -8,6 +8,7 @@ using System.Linq;
 using FacultyManager.Core.Services;
 using SimpleInjector.Lifestyles;
 using FacultyManager.Data.Models;
+using FacultyManager.Data.Repositories;
 
 namespace FacultyManager.Api.App_Start
 {
@@ -27,10 +28,16 @@ namespace FacultyManager.Api.App_Start
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
             container.Register<DbContext, FacultyDbContext>(Lifestyle.Scoped);
+
+            //Services
             container.Register<IDepartmentService, DepartmentService>(Lifestyle.Scoped);
+            container.Register<IStudentService, StudentService>(Lifestyle.Scoped);
+            container.Register<ITeacherService, TeacherService>(Lifestyle.Scoped);
+
+            //Repositories
             container.Register<IRepository<Department>, Repository<Department>>(Lifestyle.Scoped);
-            //container.Register<IRepository<>, Repository<>>(Lifestyle.Scoped);
-            //container.Register<IRepository<>, Repository<>>(Lifestyle.Scoped);
+            container.Register<IRepository<Teacher>, Repository<Teacher>>(Lifestyle.Scoped);
+            container.Register<IStudentRepository, StudentRepository>(Lifestyle.Scoped);
 
 
             container.Verify();
