@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FacultyManager.Core.Dto;
+using FacultyManager.Services.Dto;
 using FacultyManager.Data;
 using FacultyManager.Data.Models;
 using FacultyManager.Data.Repositories;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FacultyManager.Core.Services
+namespace FacultyManager.Services.Services
 {
     public interface IStudentService
     {

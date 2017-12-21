@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FacultyManager.Api.App_Start;
-using FacultyManager.Core;
+using FacultyManager.Services;
 using FacultyManager.Data;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace FacultyManager.Api
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
             SimpleInjectorWebApiInitializer.Initialize();
 
             Mapper.Initialize(cfg =>

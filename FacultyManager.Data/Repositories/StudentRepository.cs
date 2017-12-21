@@ -24,7 +24,7 @@ namespace FacultyManager.Data.Repositories
 
         public IList<Student> OrderByDepartment(int departmentId)
         {
-            return context.Database.SqlQuery<Student>("[dbo].[StudentsOrderedByDepartment] @if", new SqlParameter("@id", departmentId)).ToList();
+            return context.Database.SqlQuery<Student>("[dbo].[StudentsOrderedByDepartment] @id", new SqlParameter("@id", departmentId)).ToList();
         }
 
         public IList<Student> OrderByCurator(int curatorId)

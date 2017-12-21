@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FacultyManager.Core.Dto
+namespace FacultyManager.Models
 {
-    public class DepartmentDto
+    public class Department
     {
         public int Id { get; set; }
         public string Name { get; set; }

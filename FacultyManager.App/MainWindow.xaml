@@ -7,11 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600">
     <Window.Resources>
+        
+        <Style x:Key="StudentTable">
+            
+        </Style>
 
+        <Style x:Key="DepartmentTable">
+            
+        </Style>
+
+        <Style x:Key="TeacherTable">
+            
+        </Style>
+        
     </Window.Resources>
 
     <Grid>
-
+        
 
     </Grid>
 </Window>

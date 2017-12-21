@@ -5,7 +5,7 @@ using System.Data.Entity;
 using FacultyManager.Data;
 using System.Reflection;
 using System.Linq;
-using FacultyManager.Core.Services;
+using FacultyManager.Services.Services;
 using SimpleInjector.Lifestyles;
 using FacultyManager.Data.Models;
 using FacultyManager.Data.Repositories;

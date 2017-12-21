@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FacultyManager.Core.Dto
+namespace FacultyManager.Data
 {
-    public class StudentDto
+    public class Teacher
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int Age { get; set; }
-        public int DepartmentId { get; set; }
-        public int TeacherId { get; set; }
+        public string Rank { get; set; }
+        public string Сourse { get; set; }
     }
 }

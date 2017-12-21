@@ -68,11 +68,17 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -198,13 +204,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FacultyManager.Core\FacultyManager.Core.csproj">
-      <Project>{3d52ff5d-7f14-4086-a8fe-4ad5cd6f71f4}</Project>
-      <Name>FacultyManager.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FacultyManager.Data\FacultyManager.Data.csproj">
       <Project>{429ec480-fc02-442d-a13f-8b0bb4c3958c}</Project>
       <Name>FacultyManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacultyManager.Services\FacultyManager.Services.csproj">
+      <Project>{3d52ff5d-7f14-4086-a8fe-4ad5cd6f71f4}</Project>
+      <Name>FacultyManager.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
