@@ -11,14 +11,14 @@ namespace FacultyManager.Applicatiion.Services
 {
     public class GetData
     {
-        private static ApiService apiService;
+        private ApiService apiService;
 
         public GetData()
         {
             apiService = new ApiService();
         }
 
-        public static async Task<ObservableCollection<Department>> GetDepartments()
+        public async Task<ObservableCollection<Department>> GetDepartments()
         {
             var dataDepartment = await apiService.GetAsync<ObservableCollection<Department>>("department");
 
@@ -29,7 +29,7 @@ namespace FacultyManager.Applicatiion.Services
             return dataDepartment.Data;
         }
 
-        public static async Task<ObservableCollection<Teacher>> GetTeachers()
+        public async Task<ObservableCollection<Teacher>> GetTeachers()
         {
             var dataDepartment = await apiService.GetAsync<ObservableCollection<Teacher>>("teacher");
 
@@ -40,7 +40,7 @@ namespace FacultyManager.Applicatiion.Services
             return dataDepartment.Data;
         }
 
-        public static async Task<ObservableCollection<Student>> GetStudents()
+        public async Task<ObservableCollection<Student>> GetStudents()
         {
             var dataDepartment = await apiService.GetAsync<ObservableCollection<Student>>("student");
 
@@ -51,7 +51,7 @@ namespace FacultyManager.Applicatiion.Services
             return dataDepartment.Data;
         }
 
-        public static async Task<ObservableCollection<Student>> GetStudentsOrderedByDepartment(int id)
+        public async Task<ObservableCollection<Student>> GetStudentsOrderedByDepartment(int id)
         {
             var parameters = new Dictionary<string, string>();
             parameters.Add(nameof(id), id.ToString());
@@ -65,7 +65,7 @@ namespace FacultyManager.Applicatiion.Services
             return dataDepartment.Data;
         }
 
-        public static async Task<ObservableCollection<Student>> GetStudentsOrderedByTeacher(int id)
+        public async Task<ObservableCollection<Student>> GetStudentsOrderedByTeacher(int id)
         {
             var parameters = new Dictionary<string, string>();
             parameters.Add(nameof(id), id.ToString());

@@ -63,9 +63,7 @@
     </Compile>
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="Converters\DepartmentConverter.cs" />
-    <Compile Include="Models\Departments.cs" />
-    <Compile Include="Models\Students.cs" />
-    <Compile Include="Models\Teachers.cs" />
+    <Compile Include="Models\PostStudent.cs" />
     <Compile Include="ObservableCollectionExtension.cs" />
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\GetData.cs" />

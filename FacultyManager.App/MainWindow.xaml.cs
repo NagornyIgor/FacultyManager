@@ -34,16 +34,16 @@ namespace FacultyManager.Applicatiion
 
         private async void getDepartmentsButton_Click(object sender, RoutedEventArgs e)
         {
-            //tableLable.Content = "Departments";
-            //viewModel.departments = await viewModel.getData.GetDepartments();
+            tableLable.Content = "Departments";
+            viewModel.departments = await viewModel.getData.GetDepartments();
             MainWindowDataGrid.ItemsSource = viewModel.departments;
         }
 
         private async void getTeachersButton_Click(object sender, RoutedEventArgs e)
         {
             tableLable.Content = "Teachers";
-            //viewModel.teachers = await viewModel.getData.GetTeachers();
-            MainWindowDataGrid.ItemsSource = viewModel.teachers;      
+            viewModel.teachers = await viewModel.getData.GetTeachers();
+            MainWindowDataGrid.ItemsSource = viewModel.teachers;
         }
 
         private async void getStudentsButton_Click(object sender, RoutedEventArgs e)
@@ -53,15 +53,20 @@ namespace FacultyManager.Applicatiion
             {
                 if (getStudentMethodsComboBox.SelectedItem.ToString() == viewModel.getDataMethods[0])
                 {
-                    //MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudents();
+                    MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudents();
                 }
-                if (getStudentMethodsComboBox.SelectedItem.ToString() == viewModel.getDataMethods[1])
+                if(!string.IsNullOrWhiteSpace(idTextBox.Text))
                 {
-                    //MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudentsOrderedByTeacher(2);
-                }
-                if (getStudentMethodsComboBox.SelectedItem.ToString() == viewModel.getDataMethods[2])
-                {
-                    //MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudentsOrderedByDepartment(1);
+                    var id = int.Parse(idTextBox.Text);
+
+                    if (getStudentMethodsComboBox.SelectedItem.ToString() == viewModel.getDataMethods[1])
+                    {
+                        MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudentsOrderedByDepartment(id);
+                    }
+                    if (getStudentMethodsComboBox.SelectedItem.ToString() == viewModel.getDataMethods[2])
+                    {
+                        MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudentsOrderedByTeacher(id);
+                    }
                 }
             }
             else
@@ -70,8 +75,17 @@ namespace FacultyManager.Applicatiion
             }
         }
 
-        private void addStudentButton_Click(object sender, RoutedEventArgs e)
+        private async void addStudentButton_Click(object sender, RoutedEventArgs e)
         {
+            if(!viewModel.departments.Any())
+            {
+                viewModel.departments = await viewModel.getData.GetDepartments();
+            }
+            if(!viewModel.teachers.Any())
+            {
+                viewModel.teachers = await viewModel.getData.GetTeachers();
+            }
+
             AddStudentDialog addStudentDialog = new AddStudentDialog(viewModel);
             addStudentDialog.Show();
         }

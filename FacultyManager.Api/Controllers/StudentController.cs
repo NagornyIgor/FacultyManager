@@ -45,13 +45,14 @@ namespace FacultyManager.Api.Controllers
             return Json(students);
         }
 
-        public HttpResponseMessage Add(StudentResourceModel newStudent)
+        [HttpPost]
+        public IHttpActionResult Add(StudentResourceModel newStudent)
         {
             var newStudentDto = Mapper.Map<StudentDto>(newStudent);
 
-            studentService.CreateStudent(newStudentDto);
+            var result = studentService.CreateStudent(newStudentDto);
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Json(Mapper.Map<StudentResourceModel>(result));
         }
     }
 }

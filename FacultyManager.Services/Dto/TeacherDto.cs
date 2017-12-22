@@ -8,7 +8,7 @@ namespace FacultyManager.Services.Dto
 {
     public class TeacherDto
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Rank { get; set; }

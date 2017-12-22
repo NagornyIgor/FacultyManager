@@ -8,7 +8,7 @@ namespace FacultyManager.Api.ResourceModels
 {
     public class DepartmentResourceModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public int DepartmentCode { get; set; }
     }

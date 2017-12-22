@@ -16,7 +16,7 @@ namespace FacultyManager.Services.Services
         IList<StudentDto> GetAll();
         IList<StudentDto> OrderByCurator(int curatorId);
         IList<StudentDto> OrderByDepartment(int departmentId);
-        void CreateStudent(StudentDto newStudentDto);
+        StudentDto CreateStudent(StudentDto newStudentDto);
     }
 
     public class StudentService : IStudentService
@@ -49,11 +49,14 @@ namespace FacultyManager.Services.Services
             return Mapper.Map<IList<StudentDto>>(orderedStudents);
         }
 
-        public void CreateStudent(StudentDto newStudentDto)
+        public StudentDto CreateStudent(StudentDto newStudentDto)
         {
             var newStudent = Mapper.Map<Student>(newStudentDto);
 
-            studentRepository.Create(newStudent);
+            var result = studentRepository.Create(newStudent);
+            studentRepository.Save();
+
+            return Mapper.Map<StudentDto>(result);
         }
     }
 }

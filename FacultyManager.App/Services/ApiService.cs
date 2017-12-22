@@ -20,7 +20,7 @@ namespace FacultyManager.Applicatiion.Services
                 action += "?" + await content.ReadAsStringAsync();
             }
 
-            var response = await App.httpClient.GetAsync(action);
+            var response = await App.HttpClient.GetAsync(action);
 
             return await DeserializeResponse<TResponse>(response);
         }
@@ -29,7 +29,7 @@ namespace FacultyManager.Applicatiion.Services
         {
             var postProperties = UrlPropertyConverter.MappingToDictionary(properties);
             var content = new FormUrlEncodedContent(postProperties);
-            var response = await App.httpClient.PostAsync(url, content);
+            var response = await App.HttpClient.PostAsync(url, content);
             var responseResult = await DeserializeResponse<TResponse>(response);
 
             return responseResult;

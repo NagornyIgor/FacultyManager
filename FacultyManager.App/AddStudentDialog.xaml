@@ -13,13 +13,6 @@
         <converter:DepartmentConverter x:Key="departmentConverter"/>
         <model:Student x:Key="studentModel"/>
         <viewModel:MainWindowViewModel x:Key="viewModel"/>
-
-        <!--<x:Array x:Key="ColorListString" Type="local:ComboBoxItemString"/>
-        <local:ComboBoxItemString ValueString = "Red" />
-        <local:ComboBoxItemString ValueString = "Green"/>
-        <local:ComboBoxItemString ValueString = "Blue"/>
-        </x:Array>-->
-    
     </Window.Resources>
 
     <Grid>
@@ -30,14 +23,14 @@
         <Label Content="Department" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="80" Padding="5,1" Foreground="#FF979797"/>
         <Label Content="Teacher" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Width="80" Padding="5,1" Foreground="#FF979797"/>
 
-        <Button Content="Add Student"  Margin="182,127,10,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Center" Height="25" Style="{StaticResource ResourceKey=buttonStyle}"/>
+        <Button Content="Add Student" Name="addStudentButton" Margin="182,127,10,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Center" Height="25" Style="{StaticResource ResourceKey=buttonStyle}" Click="addStudentButton_Click"/>
 
         <StackPanel HorizontalAlignment="Left" Height="115" Margin="113,7,0,0" VerticalAlignment="Top" Width="169" DataContext="{Binding Source={StaticResource viewModel}}">
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding departments.Id}"/>
-            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Surname}"/>
-            <TextBox Height="22" TextWrapping="Wrap"/>
-            <ComboBox x:Name="departmentComboBox" SelectedItem="{Binding ElementName=txtValue, Path=Text, Converter={StaticResource departmentConverter}}"/>
-            <ComboBox/>
+            <TextBox Name="nameTextBox" Height="23" TextWrapping="Wrap"/>
+            <TextBox Name="surnameTextBox" Height="23" TextWrapping="Wrap"/>
+            <TextBox Name="ageTexBox" Height="22" TextWrapping="Wrap"/>
+            <ComboBox Name="departmentComboBox" />
+            <ComboBox Name="teacherComboBox" />
         </StackPanel>
 
     </Grid>

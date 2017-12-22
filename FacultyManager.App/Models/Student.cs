@@ -9,8 +9,8 @@ namespace FacultyManager.Applicatiion.Models
 {
     public class Student : ObservableObject
     {
-        public int _id;
-        public int Id
+        private int? _id;
+        public int? Id
         {
             get
             { return _id; }
@@ -21,7 +21,7 @@ namespace FacultyManager.Applicatiion.Models
             }
         }
 
-        public string _name;
+        private string _name;
         public string Name
         {
             get
@@ -33,7 +33,7 @@ namespace FacultyManager.Applicatiion.Models
             }
         }
 
-        public string _surname;
+        private string _surname;
         public string Surname
         {
             get
@@ -45,7 +45,7 @@ namespace FacultyManager.Applicatiion.Models
             }
         }
 
-        public int _age;
+        private int _age;
         public int Age
         {
             get
@@ -57,7 +57,7 @@ namespace FacultyManager.Applicatiion.Models
             }
         }
 
-        public int _departmentId;
+        private int _departmentId;
         public int DepartmentId
         {
             get
@@ -70,7 +70,7 @@ namespace FacultyManager.Applicatiion.Models
         }
 
 
-        public int _teacherId;
+        private int _teacherId;
         public int TeacherId
         {
             get
@@ -80,11 +80,6 @@ namespace FacultyManager.Applicatiion.Models
                 _teacherId = value;
                 RisePropertyChangedEvent("TeacherId");
             }
-        }
-
-        public void DoSomth()
-        {
-
         }
     }
 }

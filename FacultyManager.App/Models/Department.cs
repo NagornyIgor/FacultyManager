@@ -11,8 +11,8 @@ namespace FacultyManager.Applicatiion.Models
 {
     public class Department : ObservableObject
     {
-        private int _id;
-        public int Id
+        private int? _id;
+        public int? Id
         {
             get
             { return _id; }

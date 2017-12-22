@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FacultyManager.Services.Dto
+namespace FacultyManager.Applicatiion.Models
 {
-    public class StudentDto
+    public class PostStudent
     {
-        public int? Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }

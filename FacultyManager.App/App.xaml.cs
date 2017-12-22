@@ -14,16 +14,14 @@ namespace FacultyManager.Applicatiion
     /// </summary>
     public partial class App : Application
     {
-        public static HttpClient httpClient;
+        public static HttpClient HttpClient { get; } = new HttpClient()
+        {
+            Timeout = TimeSpan.FromSeconds(10),
+            BaseAddress = new Uri("http://localhost:52002/api/")
+        };
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            httpClient = new HttpClient()
-            {
-                Timeout = TimeSpan.FromSeconds(10),
-                BaseAddress = new Uri("http://localhost:52002/api/")
-            };
-
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
