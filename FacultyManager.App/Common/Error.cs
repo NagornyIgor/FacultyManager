@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FacultyManager.Common
+namespace FacultyManager.Applicatiion.Common
 {
     public class Error
     {

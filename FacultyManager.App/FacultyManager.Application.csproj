@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6737B938-06D0-47BA-9E70-4556DC3BE90C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FacultyManager</RootNamespace>
-    <AssemblyName>FacultyManager</AssemblyName>
+    <RootNamespace>FacultyManager.Applicatiion</RootNamespace>
+    <AssemblyName>FacultyManager.Applicatiion</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,7 +58,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddStudentDialog.xaml.cs">
+      <DependentUpon>AddStudentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ObservableObject.cs" />
+    <Compile Include="Converters\DepartmentConverter.cs" />
+    <Compile Include="Models\Departments.cs" />
+    <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\Teachers.cs" />
+    <Compile Include="ObservableCollectionExtension.cs" />
     <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Services\GetData.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Page Include="AddStudentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,7 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\Converters.cs" />
+    <Compile Include="Common\UrlPropertyConverter.cs" />
     <Compile Include="Common\DataResult.cs" />
     <Compile Include="Common\Error.cs" />
     <Compile Include="Common\ErrorDescriber.cs" />

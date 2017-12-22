@@ -7,22 +7,25 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace FacultyManager
+namespace FacultyManager.Applicatiion
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        internal static HttpClient httpClient; 
+        public static HttpClient httpClient;
 
-        public App()
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
             httpClient = new HttpClient()
             {
                 Timeout = TimeSpan.FromSeconds(10),
-                BaseAddress = new Uri("http://localhost:52002/")
+                BaseAddress = new Uri("http://localhost:52002/api/")
             };
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 

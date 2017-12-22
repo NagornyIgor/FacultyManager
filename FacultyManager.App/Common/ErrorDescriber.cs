@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FacultyManager.Common
+namespace FacultyManager.Applicatiion.Common
 {
     class ErrorDescriber
     {

@@ -1,12 +1,12 @@
-﻿using FacultyManager.Common;
+﻿using FacultyManager.Applicatiion.Common;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FacultyManager;
+using FacultyManager.Applicatiion;
 
-namespace FacultyManager.Services
+namespace FacultyManager.Applicatiion.Services
 {
     public class ApiService
     {
@@ -17,7 +17,7 @@ namespace FacultyManager.Services
             if (parameters != null)
             {
                 var content = new FormUrlEncodedContent(parameters);
-                action += await content.ReadAsStringAsync();
+                action += "?" + await content.ReadAsStringAsync();
             }
 
             var response = await App.httpClient.GetAsync(action);
@@ -27,7 +27,7 @@ namespace FacultyManager.Services
 
         public async Task<DataResult<TResponse>> PostAsync<TResponse, TParam>(string url, TParam properties)
         {
-            var postProperties = Converters.MappingToDictionary(properties);
+            var postProperties = UrlPropertyConverter.MappingToDictionary(properties);
             var content = new FormUrlEncodedContent(postProperties);
             var response = await App.httpClient.PostAsync(url, content);
             var responseResult = await DeserializeResponse<TResponse>(response);

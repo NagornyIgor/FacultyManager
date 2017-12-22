@@ -1,9 +1,14 @@
-﻿<Application x:Class="FacultyManager.App"
+﻿<Application x:Class="FacultyManager.Applicatiion.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:FacultyManager"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:FacultyManager.Applicatiion"
+             Startup="Application_Startup">
     <Application.Resources>
-         
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#CC12267E"/>
+            <Setter Property="Foreground" Value="#FF979797"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="FontSize" Value="14px"/>
+        </Style>
     </Application.Resources>
 </Application>
