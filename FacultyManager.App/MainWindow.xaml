@@ -24,7 +24,7 @@
             <Button Name="getDepartmentsButton" Content="Departments" Style="{StaticResource ResourceKey=buttonStyle}" Click="getDepartmentsButton_Click"/>
             <Button Name="getStudentsButton" Content="Students" Style="{StaticResource ResourceKey=buttonStyle}" Click="getStudentsButton_Click"/>
             <ComboBox Name="getStudentMethodsComboBox" Margin="20,6,0,6" Foreground="Black" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="160" Height="23"/>
-            <TextBox Name="idTextBox" TextWrapping="Wrap" Text="TextBox" Width="67" Margin="10,6,0,6"/>
+            <TextBox Name="idTextBox" TextWrapping="Wrap" Text="" Width="67" Margin="10,6,0,6"/>
         </StackPanel>
 
         <Grid HorizontalAlignment="Right" Height="315" Margin="0,44,10,0" VerticalAlignment="Top" Width="572">

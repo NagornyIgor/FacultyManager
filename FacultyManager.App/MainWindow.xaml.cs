@@ -68,6 +68,10 @@ namespace FacultyManager.Applicatiion
                         MainWindowDataGrid.ItemsSource = await viewModel.getData.GetStudentsOrderedByTeacher(id);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Enter the id");
+                }
             }
             else
             {

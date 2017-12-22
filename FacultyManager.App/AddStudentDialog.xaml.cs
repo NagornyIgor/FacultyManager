@@ -35,7 +35,7 @@ namespace FacultyManager.Applicatiion
             teacherComboBox.ItemsSource = viewModel.teachers.Select(t => t.Id);
         }
 
-        private void addStudentButton_Click(object sender, RoutedEventArgs e)
+        private async void addStudentButton_Click(object sender, RoutedEventArgs e)
         {
             var student = new PostStudent
             {
@@ -46,7 +46,7 @@ namespace FacultyManager.Applicatiion
                 TeacherId = int.Parse(teacherComboBox.SelectedItem.ToString())
             };
 
-            var result = apiService.PostAsync<Student, PostStudent>("student/add", student).Result;
+            var result = await apiService.PostAsync<Student, PostStudent>("student/add", student);
 
             if (!result.Succeeded)
             {
